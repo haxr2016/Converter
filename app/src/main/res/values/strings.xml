@@ -14,4 +14,6 @@
     <string name="converterHistory">TextView</string>
     <string name="convertHistory">TextView</string>
     <string name="convertHistoryLandScape">TextView</string>
+    <string name="log">Logs</string>
+    <string name="title_activity_logs">Logs</string>
 </resources>

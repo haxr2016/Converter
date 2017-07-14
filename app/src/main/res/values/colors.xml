@@ -7,5 +7,6 @@
     <color name="lightBlue">#73e8ff</color>
     <color name="lightPurple">#e6ceff</color>
     <color name="converter_title">#ECF0F1</color>
+    <color name="converter_title_50">#80ECF0F1</color>
     <color name="converter_title_bg">#2C3E50</color>
 </resources>
