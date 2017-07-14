@@ -18,9 +18,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 import static android.R.attr.value;
 import static android.R.id.message;
@@ -167,10 +169,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private double c2f(double n) {
-        return (n * (9.0 / 5.0) + 32);
+        return roundTwoDecimals(n * (9.0 / 5.0) + 32);
     }
 
     private double f2c(double n) {
-        return (n - 32) * 5.0 / 9.0;
+        return roundTwoDecimals(n - 32) * 5.0 / 9.0;
+    }
+
+    public double roundTwoDecimals(double d) {
+        DecimalFormat twoDForm = new DecimalFormat("#.#");
+        return Double.valueOf(twoDForm.format(d));
     }
 }

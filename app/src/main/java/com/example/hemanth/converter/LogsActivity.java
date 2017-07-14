@@ -29,8 +29,10 @@ public class LogsActivity extends AppCompatActivity {
     }
 
     private void showLogs(ArrayList<String> logs) {
-        for (String val:logs){
-            logTv.setText(logTv.getText().toString()+"\n"+val);
+
+        for (int i = logs.size()-1; i >= 0; i--) {
+
+                logTv.setText(logTv.getText().toString()+"\n"+ logs.get(i));
         }
 
     }
