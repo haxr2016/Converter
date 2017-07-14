@@ -13,4 +13,5 @@
     <string name="history">TextView1</string>
     <string name="converterHistory">TextView</string>
     <string name="convertHistory">TextView</string>
+    <string name="convertHistoryLandScape">TextView</string>
 </resources>

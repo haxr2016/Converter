@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.R.attr.value;
 import static android.R.id.message;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private TextView history;
     private Button button;
+    private int value;
     String[] ListElements = new String[]{"a", "b"};
     int selectedId;
 
@@ -118,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         String message = str1 + newText +" -> "+ newText2;
         String historyText = history.getText().toString();
         history.setText(message + "\n" + historyText);
+//        value = Integer.parseInt(newText);
 //        numText.setText("");
 
 //        final List<String> ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
@@ -142,6 +145,18 @@ public class MainActivity extends AppCompatActivity {
 //    });
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String hText = history.getText().toString();
+        outState.putString("History", hText);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        history.setText(savedInstanceState.getString("History"));
+    }
 
     private double c2f(double n) {
         return (n * (9.0 / 5.0) + 32);
